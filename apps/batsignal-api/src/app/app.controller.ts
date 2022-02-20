@@ -1,6 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 
-import { Message } from '@monodave/api-interfaces';
+import { Message, Todo } from '@monodave/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -11,5 +11,15 @@ export class AppController {
   @Get('hello')
   getData(): Message {
     return this.appService.getData();
+  }
+
+  @Get('todos')
+  getTodos(): Todo[] {
+    return this.appService.getTodos();
+  }
+
+  @Post('addTodo')
+  addTodo() {
+    return this.appService.addTodo();
   }
 }
