@@ -8,13 +8,9 @@
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/api-interfaces/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
           }
         }
       },
@@ -28,9 +24,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/batsignal",
             "index": "apps/batsignal/src/index.html",
@@ -42,9 +36,7 @@
               "apps/batsignal/src/favicon.ico",
               "apps/batsignal/src/assets"
             ],
-            "styles": [
-              "apps/batsignal/src/styles.scss"
-            ],
+            "styles": ["apps/batsignal/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -112,9 +104,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/batsignal"
-          ],
+          "outputs": ["coverage/apps/batsignal"],
           "options": {
             "jestConfig": "apps/batsignal/jest.config.js",
             "passWithNoTests": true
@@ -130,16 +120,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/batsignal-api",
             "main": "apps/batsignal-api/src/main.ts",
             "tsConfig": "apps/batsignal-api/tsconfig.app.json",
-            "assets": [
-              "apps/batsignal-api/src/assets"
-            ]
+            "assets": ["apps/batsignal-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -163,20 +149,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/batsignal-api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/batsignal-api/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/batsignal-api"
-          ],
+          "outputs": ["coverage/apps/batsignal-api"],
           "options": {
             "jestConfig": "apps/batsignal-api/jest.config.js",
             "passWithNoTests": true
@@ -204,20 +184,37 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/batsignal-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/batsignal-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "batsignal"
-      ]
+      "implicitDependencies": ["batsignal"]
+    },
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "monodave",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monodave/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@monodave/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@monodave/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
